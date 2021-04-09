@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE-LUC Apple Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header" id="home">
+        <!-- Navigation -->
+        <nav class="nav">
+          <a href="#" class="nav__link">Iphone 12</a>
+          <a href="#" class="nav__link">Macbook Air</a>
+          <a href="#" class="nav__link">Watch</a>
+          <a href="#" class="nav__link">Airpods</a>
+        </nav>
+
+        <!-- Logo -->
+        <a href="#" class="header__logo">
+          <i class="fab fa-apple"></i>
+        </a>
+
+        <div class="header__wrapper">
+          <div class="header__iphone-container">
+            <div class="header__iphone">
+              <div class="header__iphone--front">
+                <img src="images/iphone.png" alt="Iphone" />
+              </div>
+              <div class="header__iphone--back">
+                <i class="fab fa-apple"></i>
+              </div>
+            </div>
+
+            <input type="range" name="rotate-left" id="rotate-left" min="-5" max="5" value="0" />
+            <input type="range" name="rotate-up" id="rotate-up" min="-5" max="5" value="0" />
+
+            <!-- <button class="btn rotate-stop">Stop</button> -->
+          </div>
+
+          <!-- Banner -->
+          <div class="header__banner">
+            <h1 class="header__heading">&larr; Best gift</h1>
+            <p class="header__quote">Creativity is just connecting things</p>
+            <span class="header__author"> - Steve Jobs</span>
+            <button class="header__btn">Buy now</button>
+          </div>
+        </div>
+
+        <!-- Background slide show -->
+        <div class="header__background">
+          <img src="images/slideshow/section-1-bg-1.jpg" alt="Background photo" class="show" />
+          <img src="images/slideshow/section-1-bg-2.jpg" alt="Background photo" />
+          <img src="images/slideshow/section-1-bg-3.jpg" alt="Background photo" />
+          <img src="images/slideshow/section-1-bg-4.jpg" alt="Background photo" />
+          <img src="images/slideshow/section-1-bg-5.jpg" alt="Background photo" />
+        </div>
+      </header>
+
+      <section class="show-phone" id="iphone">
+        <h2 class="show-phone__heading">iPhone 12</h2>
+        <div class="show-phone__img-wrapper">
+          <img class="show-phone__img--1" src="images/iPhone 12/iphones-1-img.png" alt="iphone" />
+          <img class="show-phone__img--2" src="images/iPhone 12/iphones-2-img.png" alt="iphone" />
+        </div>
+        <div class="btn-wrapper">
+          <button class="show-phone__btn show-phone__btn--1"></button>
+          <button class="show-phone__btn show-phone__btn--2"></button>
+        </div>
+      </section>
+
+      <section class="macbook" id="macbook">
+        <h2 class="macbook__heading">MacBook Air</h2>
+        <div class="macbook__container">
+          <div class="macbook__screen-content">
+            <h3>Light. Speed.</h3>
+            <p>Starting at $999</p>
+            <button>Buy Now</button>
+          </div>
+          <div class="macbook__loading-content">
+            <i class="fab fa-apple"></i>
+            <div class="macbook__loading-bar"></div>
+          </div>
+          <img src="images/MacBook/macbook-1-desktop.png" alt="desktop wallpaper" class="macbook__screen-bg" />
+          <img src="images/MacBook/macbook-screen.png" alt="MacBook lid" class="macbook__lid" />
+          <img class="macbook__body" src="images/MacBook/macbook-keyboard.png" alt="macbook keyboard" />
+        </div>
+      </section>
+
+      <section class="section-watch" id="watch">
+        <div class="watch__band-container"></div>
+        <div class="watch__face-container"></div>
+
+        <!-- WATCH CONTROLS -->
+        <i class="fas fa-angle-up watch__up"></i>
+        <i class="fas fa-angle-down watch__down"></i>
+        <i class="fas fa-angle-left watch__left"></i>
+        <i class="fas fa-angle-right watch__right"></i>
+
+        <!-- BUY NOW BUTTON -->
+        <button class="watch__btn">Buy now</button>
+      </section>
+
+      <section class="airpods" id="airpods">
+        <h2 class="airpods__heading">Airpods</h2>
+        <img src="images/AirPods/airpods-1.png" alt="" class="airpods__img-front" />
+        <img src="images/AirPods/airpods-2.png" alt="" class="airpods__img-side" />
+        <button class="airpods__btn--1">Learn more</button>
+        <button class="airpods__btn--2">Buy</button>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__nav">
+          <a href="#home" class="footer__link">
+            <img src="images/icons/home-icon.png" alt="icon" />
+          </a>
+          <a href="#iphone" class="footer__link">
+            <img src="images/icons/iphone-icon.png" alt="icon iphone" />
+          </a>
+          <a href="#macbook" class="footer__link">
+            <img src="images/icons/macbook-icon.png" alt="icon" />
+          </a>
+          <a href="#watch" class="footer__link">
+            <img src="images/icons/watch-icon.png" alt="icon" />
+          </a>
+          <a href="#airpods" class="footer__link">
+            <img src="images/icons/airpods-icon.png" alt="icon" />
+          </a>
+        </div>
+        <p class="copyright">Copyright &copy; CodeAndCreate All Right Reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+.macbook {
+  height: 100vh;
+  background-color: #000;
+
+  clip-path: polygon(0 3%, 50% 0, 100% 0, 100% 97%, 50% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__heading {
+    color: $color-primary;
+    font-size: 7rem;
+    font-weight: 300;
+  }
+
+  &__container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    perspective: 150rem;
+  }
+  &__screen-content,
+  &__loading-content {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 5rem;
+      font-weight: 400;
+      color: $color-primary;
+      letter-spacing: 0.2rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+      color: rgb(203, 219, 223);
+    }
+    button {
+      font-size: 1.6rem;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      border: none;
+    }
+  }
+
+  &__lid {
+    width: 100%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: rotateX(-70deg);
+    transition: all 2s;
+  }
+  &__body {
+    width: 100%;
+  }
+  &__screen-bg {
+    position: absolute;
+    width: 78%;
+    top: 5%;
+    z-index: -1;
+    filter: brightness(70%);
+  }
+
+  &__loading-content {
+    justify-content: center;
+    font-size: 7rem;
+    color: #fff;
+
+    & > div {
+      width: 12rem;
+      height: 1px;
+      background-color: rgb(153, 153, 153);
+      margin-top: 2rem;
+      border-radius: 999px;
+      position: relative;
+    }
+    & > div::before {
+      content: '';
+      width: 0;
+      height: 100%;
+      position: absolute;
+      background-color: aquamarine;
+    }
+  }
+
+  // Animation
+  &__screen-content,
+  &__screen-bg,
+  &__loading-content {
+    opacity: 0;
+  }
+
+  .loading &__lid {
+    transform: rotateX(0deg);
+  }
+  .loading &__loading-content {
+    transition: all 0.2s;
+    animation: showGone 3.2s 2s backwards;
+
+    & > div::before {
+      transition: all 2s 2.2s;
+      width: 100%;
+    }
+  }
+
+  .loading &__screen-content,
+  .loading &__screen-bg {
+    opacity: 1;
+    transition: all 2s 4.2s;
+  }
+}
+
+@keyframes showGone {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

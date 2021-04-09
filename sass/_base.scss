@@ -1,0 +1,34 @@
+// FONT VARIABLES
+$font-heading: 'Work Sans', sans-serif;
+
+// COLOR VARIABLES
+$color-primary: #6edae6;
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey-light: rgb(95, 95, 95);
+$color-grey-dark: rgb(54, 54, 54);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-heading;
+}
+
+@mixin center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

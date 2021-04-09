@@ -1,0 +1,20 @@
+.footer {
+  padding: 10rem 0;
+
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80vw;
+
+    img {
+      width: 8rem;
+    }
+  }
+}
+
+.copyright {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2rem;
+}

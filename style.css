@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "Work Sans", sans-serif; }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+  display: grid;
+  grid-template-rows: auto 1fr; }
+  .header__logo {
+    color: #363636;
+    font-size: 6rem;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3); }
+  .header__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: -3rem; }
+  .header__banner {
+    display: grid;
+    justify-items: center;
+    row-gap: 4rem; }
+  .header__heading {
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-weight: 300; }
+  .header__quote {
+    font-size: 3rem; }
+  .header__author {
+    font-size: 2rem; }
+  .header__btn {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    display: block;
+    background-color: #363636;
+    color: #6edae6;
+    padding: 2rem 4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.5s;
+    clip-path: polygon(50% 0%, 81% 5%, 100% 0, 100% 100%, 80% 95%, 50% 100%, 20% 95%, 0 100%, 0 0, 23% 5%); }
+    .header__btn:hover {
+      clip-path: polygon(40% 15%, 77% 15%, 100% 10%, 100% 90%, 75% 85%, 40% 85%, 30% 100%, 0 50%, 0 50%, 30% 0);
+      padding-right: 2rem; }
+  .header__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+    .header__background > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: opacity 2s;
+      opacity: 0; }
+      .header__background > img.show {
+        opacity: 1;
+        transition: opacity 2s 0.3s; }
+  .header__iphone-container {
+    display: grid;
+    row-gap: 2rem;
+    justify-items: center;
+    perspective: 150rem; }
+  .header__iphone {
+    position: relative;
+    width: 19vw;
+    height: 31vw;
+    transform-style: preserve-3d;
+    transform: rotateY(60deg);
+    transition: all 0.3s; }
+    .header__iphone--front, .header__iphone--back {
+      width: 100%;
+      height: 100%;
+      padding: 3rem;
+      background-color: #ddd;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      box-shadow: inset 1px 1px 1px #ddd, -1px -1px 1px #ddd; }
+    .header__iphone--front {
+      transform: translateZ(3rem); }
+      .header__iphone--front img {
+        width: 100%; }
+      .header__iphone--front::before, .header__iphone--front::after {
+        content: '';
+        height: 100%;
+        width: 6rem;
+        display: block;
+        background-color: #c7c7c7;
+        position: absolute;
+        top: 0; }
+      .header__iphone--front::before {
+        left: 0;
+        transform-origin: top left;
+        transform: rotateY(90deg); }
+      .header__iphone--front::after {
+        transform-origin: top right;
+        transform: rotateY(-90deg);
+        right: 0; }
+    .header__iphone--back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateZ(-3rem) rotateY(180deg);
+      z-index: -2; }
+      .header__iphone--back i {
+        text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
+        font-size: 10rem;
+        color: #363636; }
+      .header__iphone--back::after, .header__iphone--back::before {
+        content: '';
+        width: 100%;
+        height: 6rem;
+        background-color: #c7c7c7;
+        position: absolute; }
+      .header__iphone--back::before {
+        top: 0;
+        transform-origin: top;
+        transform: rotateX(-90deg); }
+      .header__iphone--back::after {
+        bottom: 0;
+        transform-origin: bottom;
+        transform: rotateX(90deg); }
+
+.nav {
+  width: 100%;
+  padding: 2rem;
+  text-align: right;
+  padding-right: 10vw; }
+  .nav__link {
+    color: #5f5f5f;
+    font-size: 2.5rem;
+    margin-right: 2.5rem;
+    transition: all 0.3s;
+    display: inline-block; }
+    .nav__link:hover {
+      color: #363636;
+      transform: scale(1.1); }
+
+.btn {
+  padding: 1rem 2rem; }
+
+input[type='range'] {
+  width: 200%; }
+
+.show-phone {
+  padding: 5rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .show-phone__heading {
+    font-size: 7rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 4rem; }
+    .show-phone__heading::before {
+      content: '';
+      background-image: linear-gradient(#6edae6, rgba(110, 218, 230, 0));
+      height: 80vh;
+      width: 120%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform-origin: top;
+      transform: skewX(-45deg);
+      border-radius: 1rem; }
+  .show-phone__img-wrapper {
+    width: 50vw;
+    height: 40rem;
+    background-image: linear-gradient(#6edae6, rgba(110, 218, 230, 0));
+    position: relative; }
+  .show-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: all 0.3s;
+    position: absolute; }
+  .show-phone__img--1 {
+    animation: fadeImg 8s infinite backwards;
+    transform: scale(0.9); }
+  .show-phone__img--2 {
+    animation: fadeImg 8s 4s infinite backwards; }
+  .show-phone .btn-wrapper {
+    margin-top: 3rem; }
+  .show-phone__btn {
+    width: 5rem;
+    height: 5rem;
+    background-color: #363636;
+    border-radius: 2rem;
+    opacity: 1;
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    .show-phone__btn--1 {
+      grid-area: btn1;
+      justify-self: end; }
+    .show-phone__btn--2 {
+      grid-area: btn2;
+      justify-self: start; }
+    .show-phone__btn::before {
+      content: 'Buy Now';
+      text-transform: uppercase;
+      color: #6edae6;
+      font-weight: 700;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: -1rem;
+      left: -1.3rem;
+      opacity: 0;
+      width: max-content;
+      transition: all 0.3s; }
+    .show-phone__btn:hover::before {
+      top: -2rem;
+      opacity: 1; }
+    .show-phone__btn::after {
+      content: '';
+      width: 60%;
+      height: 60%;
+      position: absolute;
+      border: 1px solid #6edae6;
+      border-radius: 1rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .show-phone__btn:hover::after {
+      border: 1px solid #fff; }
+    .show-phone__btn:active::after {
+      border: 1px solid #fff;
+      background-color: rgba(255, 255, 255, 0.1); }
+    .show-phone__btn:active {
+      transform: translateY(0.2rem); }
+
+@keyframes fadeImg {
+  0% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+.macbook {
+  height: 100vh;
+  background-color: #000;
+  clip-path: polygon(0 3%, 50% 0, 100% 0, 100% 97%, 50% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; }
+  .macbook__heading {
+    color: #6edae6;
+    font-size: 7rem;
+    font-weight: 300; }
+  .macbook__container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    perspective: 150rem; }
+  .macbook__screen-content, .macbook__loading-content {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    .macbook__screen-content h3, .macbook__loading-content h3 {
+      font-size: 5rem;
+      font-weight: 400;
+      color: #6edae6;
+      letter-spacing: 0.2rem; }
+    .macbook__screen-content p, .macbook__loading-content p {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #cbdbdf; }
+    .macbook__screen-content button, .macbook__loading-content button {
+      font-size: 1.6rem;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      border: none; }
+  .macbook__lid {
+    width: 100%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: rotateX(-70deg);
+    transition: all 2s; }
+  .macbook__body {
+    width: 100%; }
+  .macbook__screen-bg {
+    position: absolute;
+    width: 78%;
+    top: 5%;
+    z-index: -1;
+    filter: brightness(70%); }
+  .macbook__loading-content {
+    justify-content: center;
+    font-size: 7rem;
+    color: #fff; }
+    .macbook__loading-content > div {
+      width: 12rem;
+      height: 1px;
+      background-color: #999999;
+      margin-top: 2rem;
+      border-radius: 999px;
+      position: relative; }
+    .macbook__loading-content > div::before {
+      content: '';
+      width: 0;
+      height: 100%;
+      position: absolute;
+      background-color: aquamarine; }
+  .macbook__screen-content, .macbook__screen-bg, .macbook__loading-content {
+    opacity: 0; }
+  .loading .macbook__lid {
+    transform: rotateX(0deg); }
+  .loading .macbook__loading-content {
+    transition: all 0.2s;
+    animation: showGone 3.2s 2s backwards; }
+    .loading .macbook__loading-content > div::before {
+      transition: all 2s 2.2s;
+      width: 100%; }
+  .loading .macbook__screen-content,
+  .loading .macbook__screen-bg {
+    opacity: 1;
+    transition: all 2s 4.2s; }
+
+@keyframes showGone {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.section-watch {
+  height: 120vh;
+  padding: 5rem 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .section-watch > i {
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+    color: #6edae6;
+    background-color: #363636;
+    border-radius: 50%;
+    z-index: 10;
+    text-align: center;
+    position: absolute; }
+    .section-watch > i:hover {
+      background-color: #5f5f5f; }
+
+.watch__face-container, .watch__band-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+  .watch__face-container > img, .watch__band-container > img {
+    width: 25rem;
+    height: 25rem;
+    object-fit: contain; }
+
+.watch__face-container {
+  flex-direction: column;
+  transition: margin-top 0.2s; }
+
+.watch__band-container {
+  transition: margin-left 0.2s; }
+
+.watch__up {
+  align-self: flex-start; }
+
+.watch__down {
+  align-self: flex-end; }
+
+.watch__right {
+  transform: translateX(45vw); }
+
+.watch__left {
+  transform: translateX(-45vw); }
+
+.airpods {
+  height: 100vh;
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+  .airpods__heading {
+    font-size: 10rem;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  .airpods__img-front, .airpods__img-side {
+    width: 40%;
+    height: 100%;
+    object-fit: contain; }
+  .airpods__img-side {
+    background-color: #6edae6; }
+  .airpods > button {
+    position: absolute;
+    padding: 1rem;
+    border: none;
+    text-transform: uppercase;
+    width: 12rem; }
+  .airpods__btn--1 {
+    left: 40%;
+    top: 63%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: #6edae6; }
+  .airpods__btn--2 {
+    right: 40%;
+    top: 63%;
+    transform: translateY(-50%);
+    color: #6edae6; }
+
+.footer {
+  padding: 10rem 0; }
+  .footer__nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80vw; }
+    .footer__nav img {
+      width: 8rem; }
+
+.copyright {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2rem; }
